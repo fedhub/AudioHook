@@ -3,15 +3,15 @@ var app        = express();
 var server     = require('http').createServer(app);
 var bodyParser = require('body-parser');
 
-//app.use(bodyParser.urlencoded({ extended: false }));
-//// define routes
-//app.use(function(req, res, next) {
-//    res.header("Access-Control-Allow-Origin", "*");
-//    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//    res.header("Access-Control-Allow-Headers", "Content-Type");
-//    res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
-//    next();
-//});
+app.use(bodyParser.urlencoded({ extended: false }));
+// define routes
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Methods", "PUT, GET, POST, DELETE, OPTIONS");
+    next();
+});
 
 app.use(require('./mongo'));
 app.use(require('./routers'));
