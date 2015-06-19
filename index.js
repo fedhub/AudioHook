@@ -2,6 +2,7 @@ var express    = require("express");
 var app        = express();
 var server     = require('http').createServer(app);
 
+//shimon
 // define routes
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
